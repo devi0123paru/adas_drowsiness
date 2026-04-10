@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADAS-DMS v3.0 Dashboard</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0e12 0%, #12151a 100%);
+            color: #c8d2e6;
+            overflow: hidden;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        .panel {
+            background: rgba(10, 14, 20, 0.8);
+            border: 1px solid #2d3844;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+        }
+        .panel-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #00dce6;
+            text-transform: uppercase;
+            border-bottom: 1px solid #2d3844;
+            padding-bottom: 10px;
+        }
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #1a1f28;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #5a626f;
+            text-transform: uppercase;
+        }
+        .metric-value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #c8d2e6;
+        }
+        .bar {
+            width: 150px;
+            height: 8px;
+            background: #1a1f28;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d400, #ffff00, #ff4400);
+            transition: width 0.1s ease-out;
+        }
+        .alert-status {
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .alert-none { background: rgba(0, 210, 90, 0.2); border: 1px solid #00d25a; color: #00ff6f; }
+        .alert-advisory { background: rgba(100, 240, 120, 0.2); border: 1px solid #64f078; color: #b0ffb0; }
+        .alert-warning { background: rgba(0, 165, 255, 0.2); border: 1px solid #00a5ff; color: #00d4ff; }
+        .alert-critical { background: rgba(0, 100, 255, 0.2); border: 1px solid #0064ff; color: #0099ff; }
+        .alert-emergency { background: rgba(0, 40, 230, 0.2); border: 1px solid #0028e6; color: #0055ff; }
+        
+        .glare-indicator {
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            background: rgba(30, 35, 50, 0.6);
+            border: 2px solid #555;
+        }
+        .glare-safe { border-color: #00d25a; color: #00ff6f; }
+        .glare-warn { border-color: #ffa500; color: #ffff00; }
+        .glare-danger { border-color: #ff0000; color: #ff6666; }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .mini-stat {
+            background: rgba(20, 25, 35, 0.6);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            border-left: 3px solid #00dce6;
+        }
+        .mini-stat-label {
+            font-size: 10px;
+            color: #5a626f;
+            text-transform: uppercase;
+        }
+        .mini-stat-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 5px;
+        }
+        .score-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+        }
+        .score-label {
+            width: 80px;
+            font-size: 11px;
+            color: #5a626f;
+            text-transform: uppercase;
+        }
+        .score-bar-container {
+            flex: 1;
+            height: 6px;
+            background: #1a1f28;
+            border-radius: 1px;
+            overflow: hidden;
+        }
+        .score-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00);
+            transition: width 0.1s ease-out;
+        }
+        .score-value {
+            width: 40px;
+            text-align: right;
+            font-size: 11px;
+            color: #c8d2e6;
+        }
+        .offline {
+            color: #ff6666;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 16px;
+        }
+        h1 {
+            grid-column: 1 / -1;
+            font-size: 24px;
+            color: #00dce6;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ADAS-DMS v3.0 Real-Time Dashboard</h1>
+
+        <!-- LEFT COLUMN: Status & Core Metrics -->
+        <div class="panel">
+            <div class="panel-title">System Status</div>
+            <div id="alert-box" class="alert-status alert-none">● NOMINAL</div>
+            
+            <div class="panel-title" style="margin-top: 15px;">Attention Score</div>
+            <div class="metric-row">
+                <span class="metric-label">Overall Score</span>
+                <div style="display: flex; gap: 10px; align-items: center; flex: 1;">
+                    <div class="bar" style="flex: 1;">
+                        <div id="score-fill" class="bar-fill" style="width: 100%"></div>
+                    </div>
+                    <span id="score-val" class="metric-value">100</span>
+                </div>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">KSS (1-9)</span>
+                <span id="kss-val" class="metric-value">1.0</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Fatigue Prob.</span>
+                <span id="fatigue-val" class="metric-value">0.00</span>
+            </div>
+
+            <div class="panel-title" style="margin-top: 15px;">Component Scores</div>
+            <div id="scores-container">
+                <div class="score-row">
+                    <span class="score-label">EAR</span>
+                    <div class="score-bar-container">
+                        <div id="score-ear" class="score-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="score-value" id="score-ear-val">100</span>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">PERCLOS</span>
+                    <div class="score-bar-container">
+                        <div id="score-perclos" class="score-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="score-value" id="score-perclos-val">100</span>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">BLINK</span>
+                    <div class="score-bar-container">
+                        <div id="score-blink" class="score-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="score-value" id="score-blink-val">100</span>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">POSE</span>
+                    <div class="score-bar-container">
+                        <div id="score-pose" class="score-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="score-value" id="score-pose-val">100</span>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">YAWN</span>
+                    <div class="score-bar-container">
+                        <div id="score-yawn" class="score-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="score-value" id="score-yawn-val">100</span>
+                </div>
+                <div class="score-row">
+                    <span class="score-label" style="color: #ffaa00;">GLARE</span>
+                    <div class="score-bar-container">
+                        <div id="score-glare" class="score-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="score-value" id="score-glare-val">100</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Glare & Facial Metrics -->
+        <div class="panel">
+            <div class="panel-title">Glare Detection Module</div>
+            <div id="glare-box" class="glare-indicator glare-safe">
+                <div id="glare-status" style="font-size: 18px; margin-bottom: 10px;">○ CLEAR SKIES</div>
+                <div style="font-size: 12px; color: #999; margin-bottom: 8px;">Light Intensity</div>
+                <div class="bar" style="margin-bottom: 10px;">
+                    <div id="glare-bar" class="bar-fill" style="width: 31%; background: linear-gradient(90deg, #00a500, #ffff00, #ff5500);"></div>
+                </div>
+                <div id="glare-value" style="font-size: 16px; font-weight: bold;">80 lux</div>
+                <div style="font-size: 11px; color: #999; margin-top: 8px;">
+                    <span id="light-category">SAFE</span> | 
+                    Peak: <span id="peak-light">80</span> lux | 
+                    Severity: <span id="glare-sev">0%</span>
+                </div>
+            </div>
+
+            <div class="panel-title" style="margin-top: 15px;">Facial Signals</div>
+            <div class="grid-2">
+                <div class="mini-stat">
+                    <div class="mini-stat-label">EAR</div>
+                    <div id="ear-val" class="mini-stat-value">0.30</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">MAR</div>
+                    <div id="mar-val" class="mini-stat-value">0.00</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">PERCLOS</div>
+                    <div id="perclos-val" class="mini-stat-value">0%</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">Blink/min</div>
+                    <div id="blink-rate-val" class="mini-stat-value">15</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">Blink Dur</div>
+                    <div id="blink-dur-val" class="mini-stat-value">120ms</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">Pitch (°)</div>
+                    <div id="pitch-val" class="mini-stat-value">0.0</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">Yaw (°)</div>
+                    <div id="yaw-val" class="mini-stat-value">0.0</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">Yawns</div>
+                    <div id="yawn-val" class="mini-stat-value">0</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">µSleep</div>
+                    <div id="usleep-val" class="mini-stat-value">0</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-label">FPS</div>
+                    <div id="fps-val" class="mini-stat-value">30</div>
+                </div>
+            </div>
+
+            <div class="panel-title" style="margin-top: 15px;">CAN Message</div>
+            <div style="background: rgba(20, 25, 35, 0.6); padding: 12px; border-radius: 4px; font-family: 'Courier New'; font-size: 11px; word-break: break-all;">
+                <span id="can-frame">0x1EF00#64000000</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="offline-msg" class="offline" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); padding: 60px; border-radius: 10px;">
+        Waiting for connection from ADAS-DMS...
+    </div>
+
+    <script>
+        const socket = io();
+
+        socket.on('connect', () => {
+            document.getElementById('offline-msg').style.display = 'none';
+        });
+
+        socket.on('disconnect', () => {
+            document.getElementById('offline-msg').style.display = 'block';
+        });
+
+        socket.on('state', (data) => {
+            // Update attention score
+            document.getElementById('score-val').textContent = data.score;
+            document.getElementById('score-fill').style.width = data.score + '%';
+
+            // Update KSS and fatigue
+            document.getElementById('kss-val').textContent = data.kss.toFixed(1);
+            document.getElementById('fatigue-val').textContent = data.fatigue.toFixed(3);
+
+            // Update component scores
+            updateScoreBar('ear', data.score_ear);
+            updateScoreBar('perclos', data.score_perclos);
+            updateScoreBar('blink', data.score_blink);
+            updateScoreBar('pose', data.score_pose);
+            updateScoreBar('yawn', data.score_yawn);
+            updateScoreBar('glare', data.score_glare);
+
+            // Update alert status
+            const alertMap = { 0: 'none', 1: 'advisory', 2: 'warning', 3: 'critical', 4: 'emergency' };
+            const alertLabels = { 0: '● NOMINAL', 1: '◈ ADVISORY', 2: '⚠ WARNING', 3: '✖ CRITICAL', 4: '⚡ EMERGENCY' };
+            const alertClass = 'alert-' + alertMap[data.alert];
+            const alertBox = document.getElementById('alert-box');
+            alertBox.className = 'alert-status ' + alertClass;
+            alertBox.textContent = alertLabels[data.alert];
+
+            // Update glare detection
+            const glareClass = data.glare_severity < 25 ? 'glare-safe' : data.glare_severity < 50 ? 'glare-warn' : 'glare-danger';
+            const glareStatus = data.glare_severity > 50 ? '⚡ ONCOMING HEADLIGHTS!' : data.is_glare ? '⚠ BRIGHT LIGHT' : '○ CLEAR SKIES';
+            const glareBox = document.getElementById('glare-box');
+            glareBox.className = 'glare-indicator ' + glareClass;
+            document.getElementById('glare-status').textContent = glareStatus;
+            document.getElementById('glare-value').textContent = data.light_intensity.toFixed(0) + ' lux';
+            document.getElementById('light-category').textContent = data.light_category || 'SAFE';
+            document.getElementById('peak-light').textContent = data.peak_light_recent.toFixed(0);
+            document.getElementById('glare-sev').textContent = data.glare_severity.toFixed(0) + '%';
+            document.getElementById('glare-bar').style.width = (data.light_intensity / 255.0 * 100) + '%';
+
+            // Update facial metrics
+            document.getElementById('ear-val').textContent = data.ear.toFixed(3);
+            document.getElementById('mar-val').textContent = data.mar.toFixed(3);
+            document.getElementById('perclos-val').textContent = (data.perclos * 100).toFixed(1) + '%';
+            document.getElementById('blink-rate-val').textContent = data.blink_rate.toFixed(1);
+            document.getElementById('blink-dur-val').textContent = data.blink_dur.toFixed(0) + 'ms';
+            document.getElementById('pitch-val').textContent = data.pitch.toFixed(1);
+            document.getElementById('yaw-val').textContent = data.yaw.toFixed(1);
+            document.getElementById('yawn-val').textContent = data.yawn_recent;
+            document.getElementById('usleep-val').textContent = data.microsleeps;
+            document.getElementById('fps-val').textContent = data.fps.toFixed(1);
+
+            // Update CAN frame
+            document.getElementById('can-frame').textContent = data.can_frame;
+        });
+
+        function updateScoreBar(idPrefix, value) {
+            document.getElementById('score-' + idPrefix + '-val').textContent = value.toFixed(0);
+            document.getElementById('score-' + idPrefix).style.width = value + '%';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+{
+  "session_start_epoch": 1775450686.7610154,
+  "duration_s": 319.9,
+  "total_frames": 5486,
+  "events": [
+    {
+      "t": 14.716,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 65.0
+    },
+    {
+      "t": 26.872,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 47.6
+    },
+    {
+      "t": 31.89,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.6
+    },
+    {
+      "t": 38.503,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 47.0
+    },
+    {
+      "t": 45.18,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 37.1
+    },
+    {
+      "t": 51.277,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 37.9
+    },
+    {
+      "t": 56.326,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.0
+    },
+    {
+      "t": 61.822,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 37.7
+    },
+    {
+      "t": 66.843,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 45.0
+    },
+    {
+      "t": 75.933,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 51.3
+    },
+    {
+      "t": 80.989,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.0
+    },
+    {
+      "t": 92.185,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 53.6
+    },
+    {
+      "t": 98.516,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 30.1
+    },
+    {
+      "t": 104.817,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 36.9
+    },
+    {
+      "t": 109.851,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 40.0
+    },
+    {
+      "t": 112.327,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 35.8
+    },
+    {
+      "t": 117.377,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 41.9
+    },
+    {
+      "t": 117.435,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 41.3
+    },
+    {
+      "t": 122.438,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 47.7
+    },
+    {
+      "t": 129.637,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 133.421,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 69.5
+    },
+    {
+      "t": 136.092,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 58.4
+    },
+    {
+      "t": 147.846,
+      "type": "alert_transition",
+      "level": 3,
+      "label": "CRITICAL",
+      "score": 28.6
+    },
+    {
+      "t": 148.747,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 28.6
+    },
+    {
+      "t": 153.795,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 42.5
+    },
+    {
+      "t": 156.757,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.0
+    },
+    {
+      "t": 162.268,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 51.7
+    },
+    {
+      "t": 169.26,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 40.1
+    },
+    {
+      "t": 172.281,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 35.1
+    },
+    {
+      "t": 177.786,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 31.8
+    },
+    {
+      "t": 178.726,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.4
+    },
+    {
+      "t": 180.757,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.9
+    },
+    {
+      "t": 184.36,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 41.5
+    },
+    {
+      "t": 189.388,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 32.3
+    },
+    {
+      "t": 190.5,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 33.2
+    },
+    {
+      "t": 195.518,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 43.5
+    },
+    {
+      "t": 196.803,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.0
+    },
+    {
+      "t": 200.237,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.5
+    },
+    {
+      "t": 200.399,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 43.5
+    },
+    {
+      "t": 205.451,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.3
+    },
+    {
+      "t": 206.334,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.9
+    },
+    {
+      "t": 208.737,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 35.2
+    },
+    {
+      "t": 213.749,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 31.5
+    },
+    {
+      "t": 218.651,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.0
+    },
+    {
+      "t": 224.829,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 46.7
+    },
+    {
+      "t": 229.879,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.1
+    },
+    {
+      "t": 230.805,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.1
+    },
+    {
+      "t": 248.096,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.5
+    },
+    {
+      "t": 248.367,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 40.7
+    },
+    {
+      "t": 253.383,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.8
+    },
+    {
+      "t": 262.398,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 270.733,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.8
+    },
+    {
+      "t": 271.226,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 59.1
+    },
+    {
+      "t": 278.408,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 30.2
+    },
+    {
+      "t": 280.719,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 32.4
+    },
+    {
+      "t": 285.753,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 52.3
+    },
+    {
+      "t": 289.325,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 49.0
+    },
+    {
+      "t": 294.373,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 49.0
+    },
+    {
+      "t": 299.442,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 299.92,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 65.0
+    },
+    {
+      "t": 301.426,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 62.8
+    },
+    {
+      "t": 308.275,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 40.6
+    },
+    {
+      "t": 309.217,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.1
+    },
+    {
+      "t": 318.884,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 319.417,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.6
+    }
+  ]
+}

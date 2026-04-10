@@ -1,0 +1,63 @@
+{
+  "session_start_epoch": 1775227209.2506127,
+  "duration_s": 40.0,
+  "total_frames": 795,
+  "events": [
+    {
+      "t": 16.644,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 70.5
+    },
+    {
+      "t": 21.65,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 68.6
+    },
+    {
+      "t": 27.256,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.2
+    },
+    {
+      "t": 29.668,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.7
+    },
+    {
+      "t": 29.922,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 40.9
+    },
+    {
+      "t": 34.945,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 50.0
+    },
+    {
+      "t": 39.248,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.0
+    },
+    {
+      "t": 39.284,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.8
+    }
+  ]
+}

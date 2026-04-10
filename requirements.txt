@@ -1,0 +1,9 @@
+opencv-python>=4.9
+mediapipe>=0.10
+scipy>=1.11
+numpy>=1.24
+flask>=3.0
+flask-socketio>=5.3
+eventlet>=0.35
+pygame>=2.5
+pyyaml>=6.0

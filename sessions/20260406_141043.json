@@ -1,0 +1,98 @@
+{
+  "session_start_epoch": 1775464843.5588858,
+  "duration_s": 280.1,
+  "total_frames": 3476,
+  "events": [
+    {
+      "t": 16.657,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.9
+    },
+    {
+      "t": 34.209,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.5
+    },
+    {
+      "t": 35.618,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 35.4
+    },
+    {
+      "t": 40.646,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 40.2
+    },
+    {
+      "t": 45.37,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.0
+    },
+    {
+      "t": 129.196,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 133.162,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 65.0
+    },
+    {
+      "t": 140.416,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.0
+    },
+    {
+      "t": 143.63,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 65.0
+    },
+    {
+      "t": 148.696,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 66.6
+    },
+    {
+      "t": 156.244,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.9
+    },
+    {
+      "t": 190.093,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.0
+    },
+    {
+      "t": 192.269,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.8
+    }
+  ]
+}

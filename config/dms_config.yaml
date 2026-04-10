@@ -1,0 +1,65 @@
+system:
+  name: "ADAS-DMS v3.0"
+  version: "3.0.0"
+  session_dir: "sessions"
+  enable_web_dashboard: true
+  dashboard_port: 5050
+  enable_audio_alerts: true
+  target_fps: 30
+  camera_index: 2
+  camera_resolution: [1280, 720]
+
+perception:
+  ear_open_threshold: 0.25
+  ear_closed_threshold: 0.20
+  mar_yawn_threshold: 0.60
+  perclos_warning: 0.15
+  perclos_critical: 0.30
+  blink_rate_low: 8
+  blink_rate_high: 25
+  blink_duration_long_ms: 400
+  microsleep_threshold_ms: 500
+  head_pitch_warning: 15.0
+  head_pitch_critical: 25.0
+  head_yaw_warning: 20.0
+  head_yaw_critical: 40.0
+
+temporal:
+  perclos_window_s: 6
+  score_smoothing_frames: 30
+  blink_rate_window_s: 60
+  yawn_decay_window_s: 120
+  microsleep_consec_frames: 15
+
+alerts:
+  level_1_score: 65
+  level_2_score: 45
+  level_3_score: 25
+  level_4_score: 10
+  cooldown_s: 3.0
+  escalation_delay_s: 5.0
+
+fusion:
+  weight_ear: 0.26
+  weight_perclos: 0.21
+  weight_blink_rate: 0.09
+  weight_head_pitch: 0.13
+  weight_head_yaw: 0.09
+  weight_yawn: 0.07
+  weight_glare: 0.15
+
+glare_detection:
+  brightness_warning_threshold: 120
+  brightness_critical_threshold: 180
+  glare_severity_max: 255
+  ldr_simulation_enabled: true
+
+audio:
+  level_1_freq: 440
+  level_1_duration_ms: 200
+  level_2_freq: 660
+  level_2_duration_ms: 400
+  level_3_freq: 880
+  level_3_duration_ms: 600
+  level_4_freq: 1100
+  level_4_duration_ms: 1000

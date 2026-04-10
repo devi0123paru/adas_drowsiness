@@ -1,0 +1,210 @@
+{
+  "session_start_epoch": 1775227395.5036676,
+  "duration_s": 103.6,
+  "total_frames": 2654,
+  "events": [
+    {
+      "t": 17.332,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.7
+    },
+    {
+      "t": 18.116,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.6
+    },
+    {
+      "t": 19.005,
+      "type": "alert_transition",
+      "level": 3,
+      "label": "CRITICAL",
+      "score": 30.0
+    },
+    {
+      "t": 24.016,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 30.0
+    },
+    {
+      "t": 24.046,
+      "type": "alert_transition",
+      "level": 3,
+      "label": "CRITICAL",
+      "score": 29.7
+    },
+    {
+      "t": 29.066,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 58.3
+    },
+    {
+      "t": 30.399,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.0
+    },
+    {
+      "t": 36.669,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 65.0
+    },
+    {
+      "t": 38.896,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.7
+    },
+    {
+      "t": 42.916,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 32.4
+    },
+    {
+      "t": 47.935,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 66.8
+    },
+    {
+      "t": 49.167,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.7
+    },
+    {
+      "t": 54.197,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 73.5
+    },
+    {
+      "t": 60.595,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.6
+    },
+    {
+      "t": 61.123,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 54.7
+    },
+    {
+      "t": 66.146,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.5
+    },
+    {
+      "t": 66.212,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.2
+    },
+    {
+      "t": 70.796,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.0
+    },
+    {
+      "t": 81.062,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 65.0
+    },
+    {
+      "t": 82.326,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 46.0
+    },
+    {
+      "t": 87.332,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 42.1
+    },
+    {
+      "t": 87.615,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.3
+    },
+    {
+      "t": 89.253,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.8
+    },
+    {
+      "t": 92.42,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 39.8
+    },
+    {
+      "t": 97.723,
+      "type": "alert_transition",
+      "level": 3,
+      "label": "CRITICAL",
+      "score": 29.8
+    },
+    {
+      "t": 97.76,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 30.0
+    },
+    {
+      "t": 98.72,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.2
+    },
+    {
+      "t": 101.601,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.6
+    },
+    {
+      "t": 103.077,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 34.4
+    }
+  ]
+}

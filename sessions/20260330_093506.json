@@ -1,0 +1,119 @@
+{
+  "session_start_epoch": 1774843506.1505585,
+  "duration_s": 62.3,
+  "total_frames": 1604,
+  "events": [
+    {
+      "t": 15.165,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.7
+    },
+    {
+      "t": 17.736,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.5
+    },
+    {
+      "t": 20.012,
+      "type": "alert_transition",
+      "level": 3,
+      "label": "CRITICAL",
+      "score": 30.0
+    },
+    {
+      "t": 25.033,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 40.6
+    },
+    {
+      "t": 26.247,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.0
+    },
+    {
+      "t": 28.523,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.6
+    },
+    {
+      "t": 29.164,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 33.6
+    },
+    {
+      "t": 34.172,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 45.1
+    },
+    {
+      "t": 36.234,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.8
+    },
+    {
+      "t": 36.539,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 41.4
+    },
+    {
+      "t": 41.563,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 50.4
+    },
+    {
+      "t": 43.02,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.4
+    },
+    {
+      "t": 48.043,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 61.9
+    },
+    {
+      "t": 48.774,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 56.554,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.7
+    },
+    {
+      "t": 56.987,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 56.7
+    }
+  ]
+}

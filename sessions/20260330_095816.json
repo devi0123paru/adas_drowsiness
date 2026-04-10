@@ -1,0 +1,14 @@
+{
+  "session_start_epoch": 1774844896.8031886,
+  "duration_s": 30.7,
+  "total_frames": 857,
+  "events": [
+    {
+      "t": 4.888,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 70.6
+    }
+  ]
+}

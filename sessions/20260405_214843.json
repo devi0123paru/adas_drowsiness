@@ -1,0 +1,217 @@
+{
+  "session_start_epoch": 1775405923.8511822,
+  "duration_s": 159.8,
+  "total_frames": 4397,
+  "events": [
+    {
+      "t": 15.538,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.5
+    },
+    {
+      "t": 16.653,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.9
+    },
+    {
+      "t": 21.665,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 61.2
+    },
+    {
+      "t": 23.917,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.0
+    },
+    {
+      "t": 24.574,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.7
+    },
+    {
+      "t": 29.576,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 67.9
+    },
+    {
+      "t": 38.801,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.9
+    },
+    {
+      "t": 44.427,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.0
+    },
+    {
+      "t": 58.801,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.9
+    },
+    {
+      "t": 63.83,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 65.538,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.6
+    },
+    {
+      "t": 66.195,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 53.4
+    },
+    {
+      "t": 71.216,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 62.6
+    },
+    {
+      "t": 72.056,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.2
+    },
+    {
+      "t": 75.508,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.6
+    },
+    {
+      "t": 76.091,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 54.2
+    },
+    {
+      "t": 81.127,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 56.7
+    },
+    {
+      "t": 83.765,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 44.9
+    },
+    {
+      "t": 87.819,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 30.5
+    },
+    {
+      "t": 92.833,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 57.7
+    },
+    {
+      "t": 93.722,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.1
+    },
+    {
+      "t": 96.698,
+      "type": "alert_transition",
+      "level": 2,
+      "label": "WARNING",
+      "score": 69.8
+    },
+    {
+      "t": 106.008,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 70.1
+    },
+    {
+      "t": 115.708,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 65.0
+    },
+    {
+      "t": 117.454,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 46.1
+    },
+    {
+      "t": 122.471,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 51.0
+    },
+    {
+      "t": 126.893,
+      "type": "alert_transition",
+      "level": 4,
+      "label": "EMERGENCY",
+      "score": 48.3
+    },
+    {
+      "t": 131.919,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 59.2
+    },
+    {
+      "t": 133.28,
+      "type": "alert_transition",
+      "level": 0,
+      "label": "NOMINAL",
+      "score": 65.2
+    },
+    {
+      "t": 155.518,
+      "type": "alert_transition",
+      "level": 1,
+      "label": "ADVISORY",
+      "score": 64.8
+    }
+  ]
+}
